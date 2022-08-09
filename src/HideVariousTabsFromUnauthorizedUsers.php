@@ -4,7 +4,7 @@ class HideVariousTabsFromUnauthorizedUsers {
 	/**
 	 * @param SkinTemplate &$sktemplate
 	 * @param array &$links
-	 * @return bool
+	 * @return void|bool
 	 */
 	public static function onSkinTemplateNavigation( SkinTemplate &$sktemplate, array &$links ) {
 		global $wgTabsToRemove;
@@ -12,7 +12,7 @@ class HideVariousTabsFromUnauthorizedUsers {
 
 		// Only remove tabs if user isn't allowed to edit pages
 		if ( !$user->isRegistered() ) {
-			return false;
+			return;
 		}
 
 		// Remove talkpage tab
