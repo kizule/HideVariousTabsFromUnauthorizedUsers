@@ -18,6 +18,11 @@ class HideVariousTabsFromUnauthorizedUsers {
 				unset( $links['namespaces']['talk'] );
 			}
 
+			// Remove mainpage tab
+			if ( isset( $links['namespaces']['main'] ) ) {
+				unset( $links['namespaces']['main'] );
+			}
+
 			// Remove actions tabs
 			foreach ( $wgTabsToRemove as $view ) {
 				if ( isset( $links['views'][$view] ) ) {
