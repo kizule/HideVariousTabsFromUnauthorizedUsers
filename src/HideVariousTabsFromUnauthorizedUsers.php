@@ -11,7 +11,7 @@ class HideVariousTabsFromUnauthorizedUsers {
 		$user = RequestContext::getMain()->getUser();
 
 		// Only remove tabs if user isn't allowed to edit pages
-		if ( $user->isAllowed( 'edit' ) ) {
+		if ( !$user->isRegistered() ) {
 			return false;
 		}
 
