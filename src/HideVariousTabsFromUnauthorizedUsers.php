@@ -2,28 +2,27 @@
 
 class HideVariousTabsFromUnauthorizedUsers {
 	/**
-	 * @param SkinTemplate &$sktemplate
+	 * @param SkinTemplate $skinTemplate
 	 * @param array &$links
-	 * @return void|bool
+	 * @return bool
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate &$sktemplate, array &$links ) {
+	public static function onSkinTemplateNavigation( SkinTemplate $skinTemplate, array &$links ) {
 		global $wgTabsToRemove;
 		$user = RequestContext::getMain()->getUser();
 
 		// Only remove tabs if user isn't allowed to edit pages
 		if ( !$user->isRegistered() ) {
-			return;
-		}
 
-		// Remove talkpage tab
-		if ( isset( $links['namespaces']['talk'] ) ) {
-			unset( $links['namespaces']['talk'] );
-		}
+			// Remove talkpage tab
+			if ( isset( $links['namespaces']['talk'] ) ) {
+				unset( $links['namespaces']['talk'] );
+			}
 
-		// Remove actions tabs
-		foreach ( $wgTabsToRemove as $view ) {
-			if ( isset( $links['views'][$view] ) ) {
-				unset( $links['views'][$view] );
+			// Remove actions tabs
+			foreach ( $wgTabsToRemove as $view ) {
+				if ( isset( $links['views'][$view] ) ) {
+					unset( $links['views'][$view] );
+				}
 			}
 		}
 
