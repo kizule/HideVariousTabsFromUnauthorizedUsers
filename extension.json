@@ -2,11 +2,11 @@
 	"name": "HideVariousTabsFromUnauthorizedUsers",
 	"version": "0.1",
 	"author": "Zoran Dori <zorandori4444@gmail.com>",
-	"description": "Disables various view and namespace tabs from users without <tt>edit</tt> permission\nThis extension is specially made for OPENDEVED wiki.",
+	"description": "Disables various view and namespace tabs from users without <tt>edit</tt> permission.",
 	"license-name": "MIT",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.35.7"
 	},
 	"AutoloadClasses": {
 		"HideVariousTabsFromUnauthorizedUsers": "src/HideVariousTabsFromUnauthorizedUsers.php"
