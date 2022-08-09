@@ -19,6 +19,7 @@
 			"description": "List of tabs of view to remove from unauthorized users",
 			"value": [
 				"view",
+				"viewsource",
 				"read",
 				"edit",
 				"addsection",
